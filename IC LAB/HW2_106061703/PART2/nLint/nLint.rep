@@ -1,0 +1,21 @@
+@nLint message generated warning file.
+
+*** Working Directory [/home/u106/u106061703/ICLAB/HW/HW2/PART2/nLint] ***
+
+../hdl/weight.v(24): Warning 25009: the fan-out number of signal "S" is 30 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter_engine.v(15): Warning 25009: the fan-out number of signal "rstn" is 16 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter_engine.v(16): Warning 25009: the fan-out number of signal "filter_mode" is 12 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter_engine.v(30): Warning 25009: the fan-out number of signal "nstate" is 15 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter_engine.v(31): Warning 25009: the fan-out number of signal "counter_start" is 26 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter_engine.v(31): Warning 25009: the fan-out number of signal "counter_end" is 25 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter_engine.v(32): Warning 25009: the fan-out number of signal "number" is 22 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter_engine.v(168): Warning 22117: "Synchronous" reset "rstn" is detected. (Design Style)
+../hdl/weighted_avg_filter_engine.v(212): Warning 25009: the fan-out number of signal "sample[6]" is 25 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter_engine.v(212): Warning 25009: the fan-out number of signal "sample[5]" is 41 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter_engine.v(212): Warning 25009: the fan-out number of signal "sample[4]" is 36 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter_engine.v(212): Warning 25009: the fan-out number of signal "sample[3]" is 47 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter_engine.v(212): Warning 25009: the fan-out number of signal "sample[2]" is 36 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter_engine.v(212): Warning 25009: the fan-out number of signal "sample[1]" is 41 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter_engine.v(212): Warning 25009: the fan-out number of signal "sample[0]" is 22 whereas the limitation is 10. (Design Style)
+
+Total 15 Warning(s)

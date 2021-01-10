@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : rop3_lut256
+Version: O-2018.06
+Date   : Wed Oct 24 20:32:27 2018
+****************************************
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /usr/cadtool/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+
+Number of ports:                          137
+Number of nets:                           442
+Number of cells:                          337
+Number of combinational cells:            305
+Number of sequential cells:                32
+Number of macros/black boxes:               0
+Number of buf/inv:                        139
+Number of references:                       8
+
+Combinational area:                764.211002
+Buf/Inv area:                      176.630081
+Noncombinational area:             211.447815
+Macro/Black Box area:                0.000000
+Net Interconnect area:             221.348581
+
+Total cell area:                   975.658817
+Total area:                       1197.007398
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+rop3_lut256                        975.6588    100.0  764.2110   211.4478  0.0000  rop3_lut256
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                 764.2110   211.4478  0.0000
+
+1

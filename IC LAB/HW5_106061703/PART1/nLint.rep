@@ -1,0 +1,15 @@
+@nLint message generated warning file.
+
+*** Working Directory [/home/u106/u106061703/ICLAB/HW/HW5/PART1/nLint] ***
+
+../hdl/top.v(9): Warning 25009: the fan-out number of signal "rst_n" is 19 whereas the limitation is 10. (Design Style)
+../hdl/top.v(14): Warning 25003: signal "sram_rdata_a0" has no load. (DFT,Design Style)
+../hdl/top.v(15): Warning 25003: signal "sram_rdata_a1" has no load. (DFT,Design Style)
+../hdl/top.v(16): Warning 25003: signal "sram_rdata_a2" has no load. (DFT,Design Style)
+../hdl/top.v(17): Warning 25003: signal "sram_rdata_a3" has no load. (DFT,Design Style)
+../hdl/top.v(60): Warning 25009: the fan-out number of signal "state" is 12 whereas the limitation is 10. (Design Style)
+../hdl/top.v(84): Warning 22117: "Synchronous" reset "rst_n" is detected. (Design Style)
+../hdl/top.v(133): Warning 25009: the fan-out number of signal "cnt_LOAD" is 26 whereas the limitation is 10. (Design Style)
+../hdl/top.v(236): Warning 22165: signal "num_small_block" is driven by a constant. (Language Construct)
+
+Total 9 Warning(s)

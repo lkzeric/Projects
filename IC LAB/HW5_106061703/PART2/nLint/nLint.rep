@@ -1,0 +1,25 @@
+@nLint message generated warning file.
+
+*** Working Directory [/home/u106/u106061703/ICLAB/HW/HW5/PART2/sim] ***
+
+../hdl/convolution.v(91): Warning 22117: "Synchronous" reset "rst_n" is detected. (Design Style)
+../hdl/quantize.v(62): Warning 25009: the fan-out number of signal "bias[19]" is 22 whereas the limitation is 10. (Design Style)
+../hdl/quantize.v(62): Warning 25009: the fan-out number of signal "bias[18:0]" is 21 whereas the limitation is 10. (Design Style)
+../hdl/quantize.v(232): Warning 22117: "Synchronous" reset "rst_n" is detected. (Design Style)
+../hdl/top.v(9): Warning 25009: the fan-out number of signal "rst_n" is 134 whereas the limitation is 10. (Design Style)
+../hdl/top.v(140): Warning 22117: "Synchronous" reset "rst_n" is detected. (Design Style)
+../hdl/top.v(239): Warning 25009: the fan-out number of signal "state" is 57 whereas the limitation is 10. (Design Style)
+../hdl/top.v(295): Warning 25009: the fan-out number of signal "cnt_LOAD[7:0]" is 15 whereas the limitation is 10. (Design Style)
+../hdl/top.v(295): Warning 25009: the fan-out number of signal "cnt_LOAD[8]" is 23 whereas the limitation is 10. (Design Style)
+../hdl/top.v(295): Warning 25009: the fan-out number of signal "cnt_LOAD[9]" is 26 whereas the limitation is 10. (Design Style)
+../hdl/top.v(297): Warning 25009: the fan-out number of signal "cnt_CONV1_1_BIAS" is 28 whereas the limitation is 10. (Design Style)
+../hdl/top.v(298): Warning 25009: the fan-out number of signal "cnt_CONV1_1" is 44 whereas the limitation is 10. (Design Style)
+../hdl/top.v(299): Warning 25009: the fan-out number of signal "cnt_weight" is 24 whereas the limitation is 10. (Design Style)
+../hdl/top.v(301): Warning 25009: the fan-out number of signal "cnt_q_output[7:0]" is 12 whereas the limitation is 10. (Design Style)
+../hdl/top.v(301): Warning 25009: the fan-out number of signal "cnt_q_output[9:8]" is 15 whereas the limitation is 10. (Design Style)
+../hdl/top.v(303): Warning 25009: the fan-out number of signal "cnt_CONV1_2_BIAS" is 28 whereas the limitation is 10. (Design Style)
+../hdl/top.v(304): Warning 25009: the fan-out number of signal "cnt_CONV1_2" is 25 whereas the limitation is 10. (Design Style)
+../hdl/top.v(316): Warning 22165: signal "cnt_CONV1_2_data_new" is driven by a constant. (Language Construct)
+../hdl/top.v(318): Warning 22165: signal "cnt_CONV1_2_pixel_tmp" is driven by a constant. (Language Construct)
+
+Total 19 Warning(s)

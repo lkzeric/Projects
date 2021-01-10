@@ -1,0 +1,969 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version O-2018.06 for linux64 - May 21, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+set TOPLEVEL "qr_encode"
+qr_encode
+#change your timing constraint here
+set TEST_CYCLE 3.5
+3.5
+source -echo -verbose 0_readfile.tcl 
+set TOP_DIR $TOPLEVEL
+qr_encode
+set RPT_DIR report
+report
+set NET_DIR netlist
+netlist
+sh rm -rf ./$TOP_DIR
+sh rm -rf ./$RPT_DIR
+sh rm -rf ./$NET_DIR
+sh mkdir ./$TOP_DIR
+sh mkdir ./$RPT_DIR
+sh mkdir ./$NET_DIR
+define_design_lib $TOPLEVEL -path ./$TOPLEVEL
+1
+set HDL_DIR "../hdl"
+../hdl
+#Read Design File (add your files here)
+analyze -library $TOPLEVEL -format verilog "../hdl/qr_encode.v  ../hdl/state_encode_0.v"  
+Running PRESTO HDLC
+Compiling source file ../hdl/qr_encode.v
+Compiling source file ../hdl/state_encode_0.v
+Presto compilation completed successfully.
+Loading db file '/usr/cadtool/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Loading db file '/usr/cadtool/SAED32_EDK/synthesis/cur/libraries/syn/dw_foundation.sldb'
+1
+# put all your HDL here
+elaborate $TOPLEVEL -architecture verilog -library $TOPLEVEL
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/gtech.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/standard.sldb'
+  Loading link library 'saed32hvt_ss0p95v125c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Statistics for case statements in always block at line 386 in file
+	'../hdl/qr_encode.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           400            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 575 in file
+	'../hdl/qr_encode.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           576            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 776 in file
+	'../hdl/qr_encode.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           782            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 1817 in file
+	'../hdl/qr_encode.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1827           |    auto/auto     |
+|           1859           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine qr_encode line 93 in file
+		'../hdl/qr_encode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   sram_rw_en_reg    | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|  sram_rdata_in_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+|   sram_wdata_reg    | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+|   sram_raddr_reg    | Flip-flop |  10   |  Y  | N  | N  | N  | Y  | N  | N  |
+|   sram_waddr_reg    | Flip-flop |  10   |  Y  | N  | N  | N  | Y  | N  | N  |
+|   sram_wmask_reg    | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    sram_csb_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | Y  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine qr_encode line 122 in file
+		'../hdl/qr_encode.v'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+|  jis8_code_end_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+| get_jis8_code_start_reg | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+| qr_encode_start_in_reg  | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|  qr_encode_finish_reg   | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|    jis8_code_in_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | Y  | N  | N  |
+===================================================================================
+
+Inferred memory devices in process
+	in routine qr_encode line 338 in file
+		'../hdl/qr_encode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   cnt_RECORD_reg    | Flip-flop |   6   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    cnt_MASK_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | Y  | N  | N  |
+|   cnt_DETECT_reg    | Flip-flop |   6   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  cnt_SQUARE_1_reg   | Flip-flop |   6   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    cnt_DOWN_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    cnt_RIGHT_reg    | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+| cnt_DOWN_RIGHT_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    cnt_LEFT_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  cnt_DOWN_LEFT_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+|   cnt_ORIENT_reg    | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine qr_encode line 563 in file
+		'../hdl/qr_encode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   9   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine qr_encode line 769 in file
+		'../hdl/qr_encode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   tmp_address_reg   | Flip-flop |  10   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine qr_encode line 990 in file
+		'../hdl/qr_encode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| C_detect_posi_i_reg | Flip-flop |   6   |  Y  | N  | N  | N  | Y  | N  | N  |
+| C_detect_posi_j_reg | Flip-flop |   6   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  detect_posi_i_reg  | Flip-flop |   6   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  detect_posi_j_reg  | Flip-flop |   6   |  Y  | N  | N  | N  | Y  | N  | N  |
+| A_detect_posi_i_reg | Flip-flop |   6   |  Y  | N  | N  | N  | Y  | N  | N  |
+| A_detect_posi_j_reg | Flip-flop |   6   |  Y  | N  | N  | N  | Y  | N  | N  |
+| B_detect_posi_i_reg | Flip-flop |   6   |  Y  | N  | N  | N  | Y  | N  | N  |
+| B_detect_posi_j_reg | Flip-flop |   6   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine qr_encode line 1012 in file
+		'../hdl/qr_encode.v'.
+=============================================================================
+|     Register Name     | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+=============================================================================
+|  search_valid_2_reg   | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+| A_detect_posi_i_n_reg | Latch |   6   |  Y  | N  | N  | N  | -  | -  | -  |
+| B_detect_posi_i_n_reg | Latch |   6   |  Y  | N  | N  | N  | -  | -  | -  |
+| B_detect_posi_j_n_reg | Latch |   6   |  Y  | N  | N  | N  | -  | -  | -  |
+|   search_valid_reg    | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+|  search_valid_1_reg   | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+|  detect_posi_i_n_reg  | Latch |   6   |  Y  | N  | N  | N  | -  | -  | -  |
+|  detect_posi_j_n_reg  | Latch |   6   |  Y  | N  | N  | N  | -  | -  | -  |
+| A_detect_posi_j_n_reg | Latch |   6   |  Y  | N  | N  | N  | -  | -  | -  |
+=============================================================================
+
+Inferred memory devices in process
+	in routine qr_encode line 1064 in file
+		'../hdl/qr_encode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    correct_1_reg    | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|     choice_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine qr_encode line 1681 in file
+		'../hdl/qr_encode.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+|    left_valid_reg    | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+| down_left_valid_reg  | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|    down_valid_reg    | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|   right_valid_reg    | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+| down_right_valid_reg | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine qr_encode line 1754 in file
+		'../hdl/qr_encode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      angle_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine qr_encode line 1794 in file
+		'../hdl/qr_encode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   add_finish_reg    | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|   record_data_reg   | Flip-flop |  144  |  Y  | N  | N  | N  | Y  | N  | N  |
+|     length_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine qr_encode line 1901 in file
+		'../hdl/qr_encode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     mask_3_reg      | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|   mask_finish_reg   | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|     mask_1_reg      | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|     mask_2_reg      | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|  qr_encode/198   |   4    |   12    |      2       |
+|  qr_encode/1092  |   4    |    1    |      2       |
+|  qr_encode/1236  |   4    |    1    |      2       |
+|  qr_encode/1380  |   4    |    1    |      2       |
+|  qr_encode/1524  |   4    |    1    |      2       |
+|  qr_encode/1701  |   4    |    1    |      2       |
+|  qr_encode/1713  |   4    |    1    |      2       |
+|  qr_encode/1723  |   4    |    1    |      2       |
+|  qr_encode/1733  |   4    |    1    |      2       |
+|  qr_encode/1743  |   4    |    1    |      2       |
+|  qr_encode/1922  |   4    |    1    |      2       |
+|  qr_encode/1923  |   4    |    1    |      2       |
+|  qr_encode/1924  |   4    |    1    |      2       |
+|  qr_encode/1929  |   4    |    1    |      2       |
+|  qr_encode/1930  |   4    |    1    |      2       |
+|  qr_encode/1931  |   4    |    1    |      2       |
+|  qr_encode/1935  |   4    |    1    |      2       |
+|  qr_encode/1936  |   4    |    1    |      2       |
+|  qr_encode/1937  |   4    |    1    |      2       |
+|  qr_encode/1941  |   4    |    1    |      2       |
+|  qr_encode/1942  |   4    |    1    |      2       |
+|  qr_encode/1943  |   4    |    1    |      2       |
+======================================================
+Information:  Complex logic will not be considered for set/reset inference. (ELAB-2008)
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'qr_encode'.
+Information: Building the design 'state_encode_0'. (HDL-193)
+Warning:  ../hdl/state_encode_0.v:141: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:144: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:149: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:152: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:157: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:160: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:165: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:168: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:178: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:187: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:196: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:205: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:213: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:221: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:229: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:237: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:247: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:255: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:262: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:269: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:276: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:283: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:290: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:297: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:307: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:315: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:322: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:329: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:336: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:343: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:350: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:357: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:366: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:374: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:381: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:388: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:395: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:402: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:409: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:416: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:425: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:433: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:440: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:447: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:454: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:461: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:468: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:475: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:484: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:492: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:499: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:506: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:513: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:520: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:527: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:534: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:543: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:551: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:558: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:565: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:572: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:579: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:586: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:593: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:602: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:610: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:617: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:624: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:631: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:638: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:645: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:652: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:661: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:669: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:676: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:683: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:690: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:697: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:704: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:711: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:721: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:729: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:736: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:743: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:750: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:757: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:764: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:771: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:780: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:788: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:795: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:802: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:809: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:816: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:823: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:830: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:840: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:848: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:855: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:862: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:869: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:876: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:883: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:890: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:900: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:908: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:915: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:922: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:929: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:936: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:943: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:950: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:960: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:968: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:975: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:982: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:989: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:996: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1003: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1010: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1019: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1027: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1034: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1041: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1048: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1055: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1062: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1069: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1079: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1087: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1094: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1101: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1108: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1115: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1122: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1129: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1139: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1147: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1154: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1161: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1168: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1175: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1182: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1189: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1198: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1206: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1213: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1220: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1227: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1234: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1241: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1248: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1258: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1266: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1273: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/state_encode_0.v:1280: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 125 in file
+	'../hdl/state_encode_0.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           135            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine state_encode_0 line 112 in file
+		'../hdl/state_encode_0.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   cnt_ENCODE_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+========================================================
+|  block name/line   | Inputs | Outputs | # sel inputs |
+========================================================
+| state_encode_0/140 |   4    |   12    |      2       |
+| state_encode_0/141 |   8    |    4    |      3       |
+========================================================
+Presto compilation completed successfully.
+1
+#Solve Multiple Instance
+set uniquify_naming_style "%s_mydesign_%d"
+%s_mydesign_%d
+uniquify
+1
+current_design $TOPLEVEL
+Current design is 'qr_encode'.
+{qr_encode}
+link    
+
+  Linking design 'qr_encode'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (2 designs)               /home/u106/u106061703/ICLAB/HW/qr_encode/syn/qr_encode.db, etc
+  saed32hvt_ss0p95v125c (library) /usr/cadtool/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db
+  dw_foundation.sldb (library) /usr/cadtool/SAED32_EDK/synthesis/cur/libraries/syn/dw_foundation.sldb
+
+1
+1
+source -echo -verbose 1_setting.tcl 
+# Setting Design and I/O Environment
+set_operating_conditions -library saed32hvt_ss0p95v125c ss0p95v125c
+Using operating conditions 'ss0p95v125c' found in library 'saed32hvt_ss0p95v125c'.
+1
+# Setting wireload model
+set auto_wire_load_selection area_reselect
+area_reselect
+set_wire_load_mode enclosed
+1
+set_wire_load_selection_group predcaps
+1
+# Setting Timing Constraints
+###  ceate your clock here
+create_clock -name clk -period $TEST_CYCLE  [get_ports clk]
+1
+###  set clock constrain
+set_ideal_network       [get_ports clk]
+1
+set_dont_touch_network  [all_clocks]
+1
+# I/O delay should depend on the real enironment. Here only shows an example of setting
+set_input_delay  [expr $TEST_CYCLE*0.8]  -clock clk [remove_from_collection [all_inputs] [get_ports clk]]
+1
+set_output_delay [expr $TEST_CYCLE*0.8]  -clock clk [all_outputs]
+1
+# Setting DRC Constraint
+# Defensive setting: smallest fanout_load 0.041 and WLM max fanout # 20 => 0.041*20*2 = 1.64
+# max_transition and max_capacitance are given in the cell library
+set_max_fanout 1.64 $TOPLEVEL
+1
+# Area Constraint
+set_max_area   0
+1
+1
+source -echo -verbose 2_compile.tcl
+# this cell's verilog will cause ncverilog to hang 
+set_dont_use [format "%s%s" saed32hvt_ss0p95v125c {/SDFFNASRX1*}]
+1
+# before synthesis settings
+set case_analysis_with_logic_constants true
+true
+set_fix_multiple_port_nets -feedthroughs -outputs -constants -buffer_constants
+1
+####check design####
+check_design > ./$RPT_DIR/check_design.log
+check_timing > ./$RPT_DIR/check_timing.log
+set_clock_gating_style -max_fanout 10
+
+Current clock gating style....
+Sequential cell: latch
+Minimum bank bitwidth: 3
+Minimum bank bitwidth for enhanced clock gating: 6
+Maximum fanout: 10
+Setup time for clock gate: 0.000000
+Hold time for clock gate: 0.000000
+Clock gating circuitry (positive edge): and
+Clock gating circuitry (negative edge): or
+ Note: inverter between clock gating circuitry 
+       and (negative edge) register clock pin.
+Control point insertion: none
+Control signal for control point: scan_enable
+Observation point insertion: false
+Observation logic depth: 5
+1
+# Synthesis all design (using : compile_ultra)
+# you can add "-gate_clock" to do gated-clock
+# you can add "-incremental" for higher performance
+compile_ultra -gate_clock -exact_map -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
+Warning: The value of variable 'compile_preserve_subdesign_interfaces' has been changed to true because '-no_boundary_optimization' is used. (OPT-133)
+Information: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.0 |     *     |
+| Licensed DW Building Blocks        | G-2012.06-DWBB_201206.4 |     *     |
+============================================================================
+
+
+Information: There are 291 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'qr_encode'
+
+Loaded alib file './alib-52/saed32hvt_ss0p95v125c.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'qr_encode'
+Information: Added key list 'DesignWare' to design 'qr_encode'. (DDB-72)
+Information: The register 'state_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: In design 'qr_encode', the register 'length_reg[7]' is removed because it is merged to 'length_reg[6]'. (OPT-1215)
+ Implement Synthetic for 'qr_encode'.
+Information: The register 'A_detect_posi_i_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'detect_posi_j_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'detect_posi_i_reg[0]' is a constant and will be removed. (OPT-1206)
+  Processing 'state_encode_0'
+Information: Added key list 'DesignWare' to design 'state_encode_0'. (DDB-72)
+ Implement Synthetic for 'state_encode_0'.
+  Processing 'state_encode_0_DW_div_uns_J2_0'
+  Processing 'state_encode_0_DW_div_uns_J2_1'
+  Processing 'state_encode_0_DW_div_uns_J2_2'
+  Processing 'state_encode_0_DW_div_uns_J2_3'
+  Processing 'SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_0'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'PMT3_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'PMT2_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'PMT1_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT3_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT2_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT1_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qr_encode_RSOP_1179, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qr_encode_DW01_inc_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qr_encode_DW01_inc_J1_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qr_encode_DW01_inc_J1_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qr_encode_DW01_inc_J1_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design state_encode_0_DP_OP_1878J2_126_8758_J2_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design state_encode_0_DP_OP_1877J2_125_7556_J2_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design state_encode_0_DP_OP_1876J2_124_8758_J2_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design state_encode_0_DW01_inc_J2_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design state_encode_0_DW_div_uns_J2_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design state_encode_0_DW_mult_uns_J2_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design state_encode_0_DW_div_uns_J2_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design state_encode_0_DW01_add_J2_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design state_encode_0_DW01_add_J2_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design state_encode_0_DW01_add_J2_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design state_encode_0_DW01_add_J2_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design state_encode_0_DW01_add_J2_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qr_encode_DP_OP_1184J1_124_896_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_8, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_9, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_10, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_11, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_12, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_13, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_14, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_15, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_16, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_17, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_18, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_19, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_20, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_21, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_22, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qr_encode_mydesign_23, since there are no registers. (PWR-806)
+Information: Performing clock-gating on design qr_encode. (PWR-730)
+Information: Performing clock-gating on design state_encode_0. (PWR-730)
+Information: The register 'B_detect_posi_j_n_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'B_detect_posi_j_reg[0]' is a constant and will be removed. (OPT-1206)
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Structuring 'state_encode_0_DW_div_uns_0'
+  Mapping 'state_encode_0_DW_div_uns_0'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Structuring 'state_encode_0_DW_div_uns_1'
+  Mapping 'state_encode_0_DW_div_uns_1'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Structuring 'state_encode_0_DW_div_uns_2'
+  Mapping 'state_encode_0_DW_div_uns_2'
+  Mapping 'state_encode_0_DW01_sub_0'
+  Mapping 'state_encode_0_DW01_add_6'
+  Mapping 'state_encode_0_DW01_add_13'
+  Mapping 'state_encode_0_DW01_add_14'
+  Mapping 'state_encode_0_DW01_add_15'
+  Mapping 'state_encode_0_DW01_add_16'
+  Mapping 'state_encode_0_DW01_add_17'
+  Mapping 'state_encode_0_DW01_add_18'
+  Mapping 'state_encode_0_DW01_add_19'
+  Mapping 'state_encode_0_DW01_add_20'
+  Mapping 'state_encode_0_DW01_add_21'
+  Mapping 'state_encode_0_DW01_add_22'
+  Mapping 'state_encode_0_DW01_add_23'
+  Mapping 'state_encode_0_DW01_add_24'
+  Mapping 'state_encode_0_DW01_add_25'
+  Mapping 'state_encode_0_DW01_add_26'
+  Mapping 'state_encode_0_DW01_add_27'
+  Mapping 'state_encode_0_DW01_add_28'
+  Mapping 'state_encode_0_DW01_add_29'
+  Mapping 'state_encode_0_DW01_add_30'
+  Mapping 'state_encode_0_DW01_add_31'
+  Mapping 'state_encode_0_DW01_add_32'
+  Mapping 'state_encode_0_DW01_add_33'
+  Structuring 'state_encode_0_DW_div_uns_3'
+  Mapping 'state_encode_0_DW_div_uns_3'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+  Mapping Optimization (Phase 3)
+Information: The register 'cnt_SQUARE_1_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cnt_SQUARE_1_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cnt_SQUARE_1_reg[3]' is a constant and will be removed. (OPT-1206)
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Selecting critical implementations
+  Mapping 'state_encode_0_DW_mult_uns_5'
+  Mapping 'state_encode_0_DW_mult_uns_6'
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning Isolate Ports
+  -----------------------
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:48    8249.0      1.05       4.1     101.0                           126351632.0000
+    0:00:53    8470.1      0.26       1.0     100.9                           131004968.0000
+    0:00:53    8470.1      0.26       1.0     100.9                           131004968.0000
+    0:00:53    8470.1      0.26       1.0     100.9                           131004968.0000
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:56    8330.1      0.30       1.1      98.3                           126948752.0000
+    0:00:56    8312.0      0.30       1.1      97.9                           122103520.0000
+    0:00:56    8312.0      0.30       1.1      97.9                           122103520.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:07    8413.9      0.00       0.0      98.7                           124288912.0000
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:01:10    8540.0      0.01       0.0       0.0 cnt_RECORD[2]             127626296.0000
+    0:01:11    8540.0      0.01       0.0       0.0                           127626296.0000
+    0:01:12    8545.3      0.00       0.0       0.4                           128012320.0000
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:12    8545.3      0.00       0.0       0.4                           128012320.0000
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+    0:01:14    8371.0      0.02       0.0       0.0                           122325984.0000
+    0:01:16    8388.8      0.00       0.0       0.0                           123019072.0000
+    0:01:16    8388.8      0.00       0.0       0.0                           123019072.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:16    8400.2      0.00       0.0       0.0                           125289520.0000
+    0:01:17    8360.6      0.21       0.8       0.0                           123046928.0000
+    0:01:18    8374.0      0.03       0.1       0.6                           124284384.0000
+    0:01:18    8374.0      0.03       0.1       0.6                           124284384.0000
+    0:01:18    8374.3      0.03       0.1       0.6                           124710912.0000
+    0:01:20    8373.8      0.01       0.0       0.0                           123674080.0000
+    0:01:20    8378.4      0.00       0.0       0.6                           123923792.0000
+    0:01:20    8378.4      0.00       0.0       0.6                           123923792.0000
+    0:01:20    8378.4      0.00       0.0       0.6                           123923792.0000
+    0:01:21    8374.6      0.00       0.0       0.6                           123595664.0000
+Loading db file '/usr/cadtool/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+#compile_ultra -incremental -exact_map -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
+# remove dummy ports
+remove_unconnected_ports [get_cells -hierarchical *]
+1
+remove_unconnected_ports [get_cells -hierarchical *] -blast_buses
+Removing port 'state[8]' from design 'state_encode_0'
+Removing port 'record_data17[3]' from design 'state_encode_0'
+Removing port 'record_data17[2]' from design 'state_encode_0'
+Removing port 'record_data17[1]' from design 'state_encode_0'
+Removing port 'record_data17[0]' from design 'state_encode_0'
+1
+1
+source -echo -verbose 3_report.tcl
+###-----------------------------Naming Rules----------------------------
+set bus_inference_style {%s[%d]}
+%s[%d]
+set bus_naming_style {%s[%d]}
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -rules verilog -hierarchy
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+1
+###--------------------------Netlist-related------------------------------------
+write -format ddc     -hierarchy -output ./netlist/${TOPLEVEL}_syn.ddc
+Writing ddc file './netlist/qr_encode_syn.ddc'.
+1
+write -format verilog -hierarchy -output ./netlist/${TOPLEVEL}_syn.v
+Writing verilog file '/home/u106/u106061703/ICLAB/HW/qr_encode/syn/netlist/qr_encode_syn.v'.
+1
+write_sdf -version 1.0  -context verilog ./netlist/${TOPLEVEL}_syn.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/u106/u106061703/ICLAB/HW/qr_encode/syn/netlist/qr_encode_syn.sdf'. (WT-3)
+Information: Updating design information... (UID-85)
+1
+write_sdc ./netlist/${TOPLEVEL}_syn.sdc
+1
+write_saif -output ./netlist/${TOPLEVEL}_syn.saif 
+Information: Writing backward SAIF information to file './netlist/qr_encode_syn.saif'. (PWR-458)
+1
+###---------------------------Syntheis result reports----------------------------
+# ===== Timing report =====
+report_timing -delay min -max_paths 4 > ./report/report_hold_${TOPLEVEL}.out
+report_timing -delay max -max_paths 4 > ./report/report_setup_${TOPLEVEL}.out
+report_timing -path full -delay max -max_paths 1 -nworst 1 -significant_digits 4 > ./report/report_time_${TOPLEVEL}.out
+# ===== Area report =====
+report_area -hier  > ./report/report_area_${TOPLEVEL}.out
+# ===== Power report =====
+report_power -hier > ./report/report_power_${TOPLEVEL}.out
+# ===== violations =====
+report_constraint -all_violators > ./report/report_violation_${TOPLEVEL}.out
+exit
+
+Thank you...

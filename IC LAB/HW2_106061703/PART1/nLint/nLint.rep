@@ -1,0 +1,16 @@
+@nLint message generated warning file.
+
+*** Working Directory [/home/u106/u106061703/ICLAB/HW/HW2/PART1/nLint] ***
+
+../hdl/weight.v(24): Warning 25009: the fan-out number of signal "S" is 30 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter.v(12): Warning 25009: the fan-out number of signal "rstn" is 13 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter.v(26): Warning 25009: the fan-out number of signal "nstate" is 12 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter.v(27): Warning 25009: the fan-out number of signal "counter_start" is 13 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter.v(166): Warning 22117: "Synchronous" reset "rstn" is detected. (Design Style)
+../hdl/weighted_avg_filter.v(208): Warning 25009: the fan-out number of signal "sample[5]" is 14 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter.v(208): Warning 25009: the fan-out number of signal "sample[4]" is 12 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter.v(208): Warning 25009: the fan-out number of signal "sample[3]" is 26 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter.v(208): Warning 25009: the fan-out number of signal "sample[2]" is 12 whereas the limitation is 10. (Design Style)
+../hdl/weighted_avg_filter.v(208): Warning 25009: the fan-out number of signal "sample[1:0]" is 14 whereas the limitation is 10. (Design Style)
+
+Total 10 Warning(s)

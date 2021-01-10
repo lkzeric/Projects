@@ -1,0 +1,7 @@
+106061703 ÂÅ°ê·ç
+		
+Rank: Rank_A
+performance index: PI_A = 2.696 ¡Ñ (10^10) ,my PI_A > 3.5 ¡Ñ (10^9)
+A(total area)= 10629
+T(test cycle)= 3.5
+C(cycle count)= 724751

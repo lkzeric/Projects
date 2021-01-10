@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : rop3_smart
+Version: O-2018.06
+Date   : Wed Oct 24 20:39:28 2018
+****************************************
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /usr/cadtool/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+
+Number of ports:                           25
+Number of nets:                            41
+Number of cells:                           20
+Number of combinational cells:             16
+Number of sequential cells:                 4
+Number of macros/black boxes:               0
+Number of buf/inv:                          4
+Number of references:                       4
+
+Combinational area:                 59.977983
+Buf/Inv area:                        5.082880
+Noncombinational area:              26.430977
+Macro/Black Box area:                0.000000
+Net Interconnect area:               7.556354
+
+Total cell area:                    86.408960
+Total area:                         93.965314
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+rop3_smart                          86.4090    100.0   59.9780    26.4310  0.0000  rop3_smart
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                  59.9780    26.4310  0.0000
+
+1

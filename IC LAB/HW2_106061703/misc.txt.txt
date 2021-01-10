@@ -1,0 +1,15 @@
+學號:106061703		姓名:藍國瑞
+
+*****************************************************
+                     Homework #2                                           
+*****************************************************
+Part1:
+	RTL coding and simulation:  PASS all test pattern
+	nLint check:  PASS
+Part2:
+	RTL coding and simulation:  PASS all test pattern
+	nLint check:  PASS	
+
+
+
+    
